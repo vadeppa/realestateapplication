@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<style media="screen">
+  .Signup-cont{
+    display: flex;
+    margin-left: 500px;
+
+
+  }
+  .container-fluid{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+  }
+
+  .top-cont-div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+        .main-card-div{
+                background-color: rgb(199, 234, 234);
+                border-radius: 15px;
+                padding: 20px;
+        }
+        button{
+                background-color: rgb(206, 157, 253);
+                padding: 10px;
+        }
+        button:hover{
+                background-color: rgb(49, 75, 10);
+
+        }
+        /* input style */
+        /* Basic Input Styles */
+input {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Focus Styles */
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Placeholder Styles */
+input::placeholder {
+  color: #999;
+}
+
+/* Disabled Styles */
+input:disabled {
+  background-color: #f8f8f8;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Error Styles */
+input.error {
+  border-color: #dc3545;
+}
+
+/* Success Styles */
+input.success {
+  border-color: #28a745;
+}
+
+/* Rounded Input */
+input.rounded {
+  border-radius: 20px;
+}
+
+/* Input with Icon */
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+/* Full Width Input */
+input.full-width {
+  width: 100%;
+}
+
+/* Transparent Input */
+input.transparent {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+}
+
+/* Custom Checkbox Styles */
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Custom Radio Button Styles */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Custom Switch Styles */
+.switch input {
+  display: none;
+}
+
+.switch label {
+  display: inline-block;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+}
+
+.switch input:checked + label {
+  background-color: #4caf50;
+}
+
+.switch label:before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 1px;
+  left: 1px;
+  transition: 0.3s;
+}
+
+.switch input:checked + label:before {
+  transform: translateX(30px);
+}
+
+
+</style>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RealEstatePro</a>
+      <ul class="nav navbar-nav ">
+        <!-- <li class="active"><a href="#">Home</a></li> -->
+        <li><a href="{% url 'create_tenant' %}">Tenant Create</a></li>
+        <li><a href="{% url 'create_property_unit' %}">Proporty Add</a></li>
+        <li><a href="{% url 'property_all' %}">List of properety</a></li>
+  
+  `
+      </ul>
+    </div>
+    
+    <ul class=" nav navbar-nav Signup-cont">
+      <li><a href="{% url 'custom_signup' %}">Signup</a></li>
+      <li><a href="{% url 'custom_login' %}">Login</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+
+    </ul>
+ 
+    <!-- <button class="btn btn-danger navbar-btn">Button</button> -->
+  </div>
+</nav>
+
+<div class="container">
+ 
+</div>
+
+</body>
+</html>
+{% block content %}
+{% endblock %}

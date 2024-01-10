@@ -1,0 +1,98 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<!-- unit_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Unit Details</title>
+</head>
+<style media="screen">
+    /* Table Styles */
+.table-container {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Table Header Styles */
+.table-container thead {
+  background-color: #f5f5f5;
+}
+
+/* Table Header Cell Styles */
+.table-container th {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Table Body Cell Styles */
+.table-container td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Additional Styles for Back to Property Details button */
+.back-btn {
+  margin-top: 20px;
+}
+
+/* Additional Styles for Go to Lease Details button */
+.lease-btn {
+  margin-top: 20px;
+}
+
+
+</style>
+<body>
+
+    <div class="top-cont-div">
+        <div class="main-card-div">
+            <div class="table-container">
+                <h1>Property Unit Details</h1>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>Property Features</th>
+                      <th>Rent Cost</th>
+                      <th>Bedroom Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ property_unit.property_features }}</td>
+                      <td>{{ property_unit.rent_cost }}</td>
+                      <td>{{ property_unit.bedroom_type }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <a class="btn btn-primary back-btn" href="{% url 'property_all' %}">Back to Property Details</a>
+              <a class="btn btn-primary lease-btn" href="{% url 'create_lease' %}">Go to Lease Details</a>
+              
+            
+
+        </div>
+        </div>
+
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+ 
+</head>
+<style media="screen">
+    /* Select Styles */
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Hover Styles */
+select:hover {
+  border-color: #aaa;
+}
+
+/* Focus Styles */
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Disabled Styles */
+select:disabled {
+  background-color: #f0f0f0;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Option Styles */
+select option {
+  padding: 8px;
+}
+
+
+</style>
+<body>
+    <div class="top-cont-div">
+        <div class="main-card-div">
+<h3>Please login here to continue</h3><BR>
+<div class="down">
+ <form action="" method="POST">
+  {% csrf_token %}
+  {% if form.non_field_errors %}
+   {% for error in form.non_field_errors %}
+    <p class="er">{{error}}</p>
+   {% endfor %}
+  {% endif %}
+  {% for fm in form %}
+   {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+  {% endfor %}
+  <input type="submit" value="Login">
+ </form>
+  You don't have an account..? <a href="{% url 'custom_signup' %}">Signup</a>
+</div>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}

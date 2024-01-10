@@ -1,0 +1,62 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Lease</title>
+</head>
+<style media="screen">
+    /* Select Styles */
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Hover Styles */
+select:hover {
+  border-color: #aaa;
+}
+
+/* Focus Styles */
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Disabled Styles */
+select:disabled {
+  background-color: #f0f0f0;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Option Styles */
+select option {
+  padding: 8px;
+}
+
+
+</style>
+<body>
+
+    <div class="top-cont-div">
+        <div class="main-card-div">
+            <h2>Create Lease</h2>
+            <form method="post" enctype="multipart/form-data",action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
+{% endblock %}
